@@ -4,6 +4,7 @@ import { prismaExtension } from "@trigger.dev/build/extensions/prisma";
 export default defineConfig({
   project: "proj_wlwtbrqqpcsdekzifmxq",
   runtime: "node",
+  dirs: ["./src/trigger", "./src/worker"],
   logLevel: "info",
   maxDuration: 3600,
   retries: { enabled: true, maxAttempts: 3 },

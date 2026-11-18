@@ -1,0 +1,47 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["typedSql"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model search_config {
+  version            Int      @id @default(autoincrement())
+  is_active          Boolean  @default(true)
+  cut_count          Int      @default(5)
+  search_buffer      Int      @default(3)
+  search_buffer_max  Int      @default(12)
+  dedupe_threshold   Float    @default(0.88)
+  dedupe_jaccard     Float    @default(0.85)
+  dedupe_elim_window Int      @default(200)
+  created_at         DateTime @default(now())
+  notes              String?
+}
+
+model judge_config {
+  version            Int      @id @default(autoincrement())
+  is_active          Boolean  @default(true)
+  dimension_weights  Json     // map of dimension name to float
+  created_at         DateTime @default(now())
+  notes              String?
+}
+
+model ideas {
+  id               String   @id @default(uuid())
+  status           String   // active, eliminated, cut_by_rank
+  composite        Float    @default(0)
+  last_composite   Float    @default(0)
+  times_reinstated Int      @default(0)
+  created_at       DateTime @default(now())
+  updated_at       DateTime @updatedAt
+}
+
+model cycle_metrics {
+  id                 Int      @id @default(autoincrement())
+  iteration          Int
+  active_count_after Int
+  shortfall          Boolean  @default(false)
+  created_at         DateTime @default(now())
+}

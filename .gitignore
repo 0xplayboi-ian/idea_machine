@@ -1,0 +1,15 @@
+# Trigger.dev
+.trigger
+
+# Node
+node_modules/
+dist/
+.env
+.env.local
+
+# Prisma
+/prisma/migrations/
+/node_modules/.prisma/
+
+# OS/System
+.DS_Store

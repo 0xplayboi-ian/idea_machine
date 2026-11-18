@@ -1,0 +1,28 @@
+{
+  "name": "idea_gen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@ai-sdk/openai": "^4.0.121",
+    "@prisma/adapter-pg": "^7.10.1",
+    "@prisma/client": "^7.10.1",
+    "@trigger.dev/sdk": "^4.8.5",
+    "ai": "^7.0.176",
+    "pg": "^8.23.1",
+    "pgvector": "^0.3.1",
+    "tsx": "^4.23.15"
+  },
+  "devDependencies": {
+    "@prisma/prisma7": "^7.10.1",
+    "@trigger.dev/build": "^4.8.5",
+    "prisma": "^8.0.0-rc.34"
+  }
+}
